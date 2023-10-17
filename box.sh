@@ -36,6 +36,8 @@ function start_menu() {
     while true; do
         clear
         echo -e "${Green}==================================================${Default}"
+        echo -e "${Green}                Wenx一键脚本工具                   ${Default}"
+        echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1. 更新脚本${Default}"
         echo -e " ${Green}2. 执行SWAP一键安装/卸载脚本${Default}"
         echo -e " ${Green}3. 清理垃圾${Default}"
