@@ -30,6 +30,14 @@ function clean() {
     sudo apt -f install
     echo -e "${Green}垃圾清理完成${Default}"
 }
+# 定义GOST安装函数
+function gost() {
+    wget --no-check-certificate -O "/root/gost.sh" "https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh" -T 30 -t 5 -d
+    chmod +x "/root/gost.sh"
+    echo "下载完成"
+    echo "你也可以输入 bash /root/gost.sh 来手动运行"
+    bash "/root/gost.sh"
+}
 
 # 主菜单函数
 function start_menu() {
@@ -41,6 +49,7 @@ function start_menu() {
         echo -e " ${Green}1. 更新脚本${Default}"
         echo -e " ${Green}2. 执行SWAP一键安装/卸载脚本${Default}"
         echo -e " ${Green}3. 清理垃圾${Default}"
+        echo -e " ${Green}4. Gost安装${Default}"
         echo -e " ${Green}999. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -e "请选择操作:"
@@ -60,6 +69,11 @@ function start_menu() {
             3)
                 clean
                 echo -e "清理垃圾"
+                read -p ""
+                ;;
+            4)
+                gost
+                echo -e "Gost安装"
                 read -p ""
                 ;;
             999)
