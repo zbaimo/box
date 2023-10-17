@@ -55,7 +55,7 @@ function start_menu() {
                 echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
-            2)
+            3)
                 clean
                 echo -e "清理垃圾"
                 read -p ""
