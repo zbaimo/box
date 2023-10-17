@@ -38,6 +38,33 @@ function gost() {
     echo "你也可以输入 bash /root/gost.sh 来手动运行"
     bash "/root/gost.sh"
 }
+#MT.SH 流媒体解锁测试
+function mt(){
+        #安装JQ
+	if [ -e "/etc/redhat-release" ];then
+	yum install epel-release -y -q > /dev/null;
+	yum install jq -y -q > /dev/null;
+	elif [[ $(cat /etc/os-release | grep '^ID=') =~ ubuntu ]] || [[ $(cat /etc/os-release | grep '^ID=') =~ debian ]];then
+	apt-get update -y > /dev/null;
+	apt-get install jq > /dev/null;
+	else 
+	echo -e "${Font_Red}请手动安装jq${Font_Suffix}";
+	exit;
+	fi
+
+        jq -V > /dev/null 2>&1;
+        if [ $? -ne 0 ];then
+	echo -e "${Font_Red}请手动安装jq${Font_Suffix}";
+	exit;
+        fi
+
+wget -O "/root/mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d
+chmod +x "/root/mt.sh"
+chmod 777 "/root/mt.sh"
+blue "下载完成"
+blue "你也可以输入 bash /root/mt.sh 来手动运行"
+bash /root/mt.sh
+}
 
 # 主菜单函数
 function start_menu() {
@@ -50,6 +77,7 @@ function start_menu() {
         echo -e " ${Green}2. 执行SWAP一键安装/卸载脚本${Default}"
         echo -e " ${Green}3. 清理垃圾${Default}"
         echo -e " ${Green}4. Gost安装${Default}"
+        echo -e " ${Green}5. 流媒体解锁检测${Default}"
         echo -e " ${Green}999. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -e "请选择操作:"
@@ -74,6 +102,11 @@ function start_menu() {
             4)
                 gost
                 echo -e "Gost安装"
+                read -p ""
+                ;;
+            5)
+                mt
+                echo -e "流媒体解锁检测"
                 read -p ""
                 ;;
             999)
