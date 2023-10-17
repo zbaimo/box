@@ -80,7 +80,7 @@ function start_menu() {
         echo -e " ${Green}5. 流媒体解锁检测${Default}"
         echo -e " ${Green}999. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
-        echo -e "请输入数字:"
+        echo -n "请输入数字:"
 
         read choice
         case $choice in
