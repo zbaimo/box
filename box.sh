@@ -9,6 +9,7 @@ function swap() {
     echo "你也可以输入 bash /root/swap.sh 来手动运行"
     bash "/root/swap.sh"
 }
+
 # 定义更新脚本函数
 function update() {
     echo "正在更新脚本..."
@@ -28,7 +29,7 @@ function start_menu() {
         read choice
         case $choice in
             0)
-                updata
+                update
                 echo "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
