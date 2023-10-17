@@ -22,18 +22,18 @@ function start_menu() {
     while true; do
         clear
         echo "请选择操作:"
-        echo "0. 更新脚本"
-        echo "1. 执行SWAP一键安装/卸载脚本"
+        echo "1. 更新脚本"
+        echo "2. 执行SWAP一键安装/卸载脚本"
         echo "999. 退出"
 
         read choice
         case $choice in
-            0)
+            1)
                 update
                 echo "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
-            1)
+            2)
                 swap
                 echo "按 Enter 键返回主菜单"
                 read -p ""
