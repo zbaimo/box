@@ -33,10 +33,10 @@ function clean() {
 # 定义GOST安装函数
 function gost() {
     wget --no-check-certificate -O "./gost.sh" "https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh" -T 30 -t 5 -d
-    chmod +x "/root/gost.sh"
+    chmod +x "./gost.sh"
     echo "下载完成"
-    echo "你也可以输入 bash /root/gost.sh 来手动运行"
-    bash "/root/gost.sh"
+    echo "你也可以输入 bash ./gost.sh 来手动运行"
+    bash "./gost.sh"
 }
 #MT.SH 流媒体解锁测试
 function mt(){
@@ -59,11 +59,11 @@ function mt(){
         fi
 
 wget -O "./mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d
-chmod +x "/root/mt.sh"
-chmod 777 "/root/mt.sh"
+chmod +x "./mt.sh"
+chmod 777 "./mt.sh"
 blue "下载完成"
-blue "你也可以输入 bash /root/mt.sh 来手动运行"
-bash /root/mt.sh
+blue "你也可以输入 bash ./mt.sh 来手动运行"
+bash ./mt.sh
 }
 # docker和docker-compose安装
 function docker() {
