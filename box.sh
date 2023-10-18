@@ -8,11 +8,11 @@ Default="\e[0m"
 # 定义SWAP安装/卸载函数
 function swap() {
     wget -O "./swap.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/swap.sh" --no-check-certificate -T 30 -t 5 -d
-    chmod +x "/root/swap.sh"
-    chmod 777 "/root/swap.sh"
+    chmod +x "./swap.sh"
+    chmod 777 "./swap.sh"
     echo "下载完成"
-    echo "你也可以输入 bash /root/swap.sh 来手动运行"
-    bash "/root/swap.sh"
+    echo "你也可以输入 bash ./swap.sh 来手动运行"
+    bash "./swap.sh"
 }
 
 # 定义更新脚本函数
