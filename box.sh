@@ -7,7 +7,7 @@ Default="\e[0m"
 
 # 定义SWAP安装/卸载函数
 function swap() {
-    wget -O "/root/swap.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/swap.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./swap.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/swap.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "/root/swap.sh"
     chmod 777 "/root/swap.sh"
     echo "下载完成"
@@ -32,7 +32,7 @@ function clean() {
 }
 # 定义GOST安装函数
 function gost() {
-    wget --no-check-certificate -O "/root/gost.sh" "https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh" -T 30 -t 5 -d
+    wget --no-check-certificate -O "./gost.sh" "https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh" -T 30 -t 5 -d
     chmod +x "/root/gost.sh"
     echo "下载完成"
     echo "你也可以输入 bash /root/gost.sh 来手动运行"
@@ -58,7 +58,7 @@ function mt(){
 	exit;
         fi
 
-wget -O "/root/mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d
+wget -O "./mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d
 chmod +x "/root/mt.sh"
 chmod 777 "/root/mt.sh"
 blue "下载完成"
