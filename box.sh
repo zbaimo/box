@@ -65,6 +65,15 @@ blue "下载完成"
 blue "你也可以输入 bash /root/mt.sh 来手动运行"
 bash /root/mt.sh
 }
+# docker和docker-compose安装
+function docker() {
+    wget -O "./docker.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/docker.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./docker.sh"
+    chmod 777 "./docker.sh"
+    echo "下载完成"
+    echo "你也可以输入 bash ./docker.sh 来手动运行"
+    bash "./docker.sh"
+}
 
 # 主菜单函数
 function start_menu() {
@@ -78,7 +87,8 @@ function start_menu() {
         echo -e " ${Green}3. 清理垃圾${Default}"
         echo -e " ${Green}4. Gost安装${Default}"
         echo -e " ${Green}5. 流媒体解锁检测${Default}"
-        echo -e " ${Green}999. 退出脚本${Default}"
+        echo -e " ${Green}6. docker和docker-compose安装${Default}"
+	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
 
@@ -109,7 +119,12 @@ function start_menu() {
                 echo -e "流媒体解锁检测"
                 read -p ""
                 ;;
-            999)
+	    6)
+                docker
+                echo -e "docker和docker-compose安装"
+                read -p ""
+                ;;
+            0)
                 echo "退出脚本"
                 exit 0
                 ;;
