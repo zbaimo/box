@@ -1,8 +1,7 @@
 #!/bin/bash
 
-
 # 进入root目录
-cd root
+cd /root
 
 # 检查是否存在data文件夹，如果不存在则创建
 if [ ! -d "data" ]; then
@@ -56,10 +55,4 @@ services:
 EOL
 
 # 执行docker-compose up -d
-cd root/data/npm
-docker compose up -d
-
-# 退出npm目录
-cd ..
-
-
+docker-compose up -d
