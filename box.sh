@@ -74,6 +74,16 @@ function docker() {
     echo "你也可以输入 bash ./docker.sh 来手动运行"
     bash "./docker.sh"
 }
+# 定义NPM安装/卸载函数
+function npm() {
+    wget -O "./npm.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/npm.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./npm.sh"
+    chmod 777 "./npm.sh"
+    echo "下载完成"
+    echo "你也可以输入 bash ./npm.sh 来手动运行"
+    bash "./npm.sh"
+}
+
 
 # 主菜单函数
 function start_menu() {
@@ -87,8 +97,9 @@ function start_menu() {
         echo -e " ${Green}3. 清理垃圾${Default}"
         echo -e " ${Green}4. Gost安装${Default}"
         echo -e " ${Green}5. 流媒体解锁检测${Default}"
-        echo -e " ${Green}6. docker和docker-compose安装${Default}"
-	echo -e " ${Green}0. 退出脚本${Default}"
+        echo -e "${Green}==================================================${Default}"
+        echo -e " ${Green}6. Docker项目${Default}"
+        echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
 
@@ -119,14 +130,47 @@ function start_menu() {
                 echo -e "流媒体解锁检测"
                 read -p ""
                 ;;
-	    6)
-                docker
-                echo -e "docker和docker-compose安装"
-                read -p ""
+            6)
+                sub_menu  # Docker项目
                 ;;
             0)
                 echo "退出脚本"
                 exit 0
+                ;;
+            *)
+                echo -e "无效的选项"
+                ;;
+        esac
+    done
+}
+
+# 1号子菜单函数
+function sub_menu() {
+    while true; do
+        clear
+        echo -e "${Green}==================================================${Default}"
+        echo -e "${Green}                Wenx一键脚本工具                   ${Default}"
+        echo -e "${Green}==================================================${Default}"
+        echo -e " ${Green}1. Docker和Docke-Compose安装${Default}"
+        echo -e " ${Green}2. NPM 安装${Default}"
+        echo -e " ${Green}3. 返回主菜单${Default}"
+        echo -e "${Green}==================================================${Default}"
+        echo -n "请输入数字:"
+
+        read sub_choice
+        case $sub_choice in
+            1)
+                docker
+                echo "Docker和Docke-Compose安装"
+                read -p "按 Enter 键返回子菜单"
+                ;;
+            2)
+                npm
+                echo "NPM 安装"
+                read -p "按 Enter 键返回子菜单"
+                ;;
+            3)
+                return
                 ;;
             *)
                 echo -e "无效的选项"
