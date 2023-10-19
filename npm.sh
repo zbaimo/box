@@ -55,4 +55,4 @@ services:
 EOL
 
 # 执行docker-compose up -d
-docker-compose up -d
+docker compose up -d
