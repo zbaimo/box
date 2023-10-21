@@ -25,7 +25,7 @@ function update() {
     if [ $? -eq 0 ]; then
         echo -e "脚本已成功更新，请按 Enter 键重新打开更新后的脚本。"
         read -p ""
-        bash "box_updated.sh"  # 重新启动已更新的脚本
+        bash "./box.sh"  # 重新启动已更新的脚本
         exit
     else
         echo -e "${Red}更新失败，请检查网络连接或手动下载更新。${Default}"
