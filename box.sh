@@ -84,6 +84,15 @@ function npm() {
     bash "./npm.sh"
 }
 
+# 定义speed安装/卸载函数
+function speed() {
+    wget -O "./speed.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/speed.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./speed.sh"
+    chmod 777 "./speed.sh"
+    echo "下载完成"
+    echo "你也可以输入 bash ./speed.sh 来手动运行"
+    bash "./speed.sh"
+}
 
 # 主菜单函数
 function start_menu() {
@@ -97,8 +106,9 @@ function start_menu() {
         echo -e " ${Green}3. 清理垃圾${Default}"
         echo -e " ${Green}4. Gost安装${Default}"
         echo -e " ${Green}5. 流媒体解锁检测${Default}"
+	echo -e " ${Green}6. Speed端口测速${Default}"
         echo -e "${Green}==================================================${Default}"
-        echo -e " ${Green}6. Docker项目${Default}"
+        echo -e " ${Green}7. Docker项目${Default}"
         echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -131,6 +141,11 @@ function start_menu() {
                 read -p ""
                 ;;
             6)
+                speed
+                echo -e "Speed端口测速"
+                read -p ""
+                ;;
+	    7)
                 sub_menu  # Docker项目
                 ;;
             0)
