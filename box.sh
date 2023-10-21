@@ -18,7 +18,7 @@ function swap() {
 # 定义更新脚本函数
 function update() {
     echo -e "${Green}正在更新脚本...${Default}"
-    wget -O "box_updated.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/box.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./box.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/box.sh" --no-check-certificate -T 30 -t 5 -d
     echo -e "${Green}更新完成${Default}"
 
     # 检查更新是否成功
