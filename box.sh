@@ -18,8 +18,18 @@ function swap() {
 # 定义更新脚本函数
 function update() {
     echo -e "${Green}正在更新脚本...${Default}"
-    wget -O "$0" "https://raw.githubusercontent.com/zerowx6688/box/main/box.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "box_updated.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/box.sh" --no-check-certificate -T 30 -t 5 -d
     echo -e "${Green}更新完成${Default}"
+
+    # 检查更新是否成功
+    if [ $? -eq 0 ]; then
+        echo -e "脚本已成功更新，请按 Enter 键重新打开更新后的脚本。"
+        read -p ""
+        bash "box_updated.sh"  # 重新启动已更新的脚本
+        exit
+    else
+        echo -e "${Red}更新失败，请检查网络连接或手动下载更新。${Default}"
+    fi
 }
 
 # 定义清理垃圾函数
