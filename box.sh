@@ -132,7 +132,7 @@ function start_menu() {
         echo -e " ${Green}8. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
-        echo -n "请输入数字:"
+        echo -n "${Green}请输入数字:${Default}"
 
         read choice
         case $choice in
@@ -205,7 +205,7 @@ function sub_menu() {
         echo -e " ${Green}2. NPM 安装${Default}"
         echo -e " ${Green}0. 返回主菜单${Default}"
         echo -e "${Green}==================================================${Default}"
-        echo -n "请输入数字:"
+        echo -n "${Green}请输入数字:${Default}"
 
         read sub_choice
         case $sub_choice in
