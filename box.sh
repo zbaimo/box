@@ -127,7 +127,7 @@ function start_menu() {
         echo -e " ${Green}5. 流媒体解锁检测${Default}"
 	echo -e " ${Green}6. Speed端口测速${Default}"
         echo -e " ${Green}7. 更新系统固件${Default}"
-	echo -e " ${Green}8. warp安装${Default}"
+	echo -e " ${Green}9. warp安装${Default}"
 	echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}8. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
@@ -180,7 +180,7 @@ function start_menu() {
                 read -p "${Green}按 Enter 键返回主菜单${Default}"
                 ;;
 
-	    8)
+	    9)
                 sub_menu  # Docker项目
                 ;;
             0)
