@@ -171,13 +171,13 @@ function start_menu() {
                 apt-get update
                 apt-get install -y wget vim
                 echo -e "${Green}操作完成${Default}"
-                read -p "${Green}按 Enter 键返回主菜单${Default}"
+                read -p "按 Enter 键返回主菜单"
                 ;;
             8)
                 warp
 		echo -e "${Green}执行 'warp安装'${Default}"
                 echo -e "${Green}操作完成${Default}"
-                read -p "${Green}按 Enter 键返回主菜单${Default}"
+                read -p "按 Enter 键返回主菜单"
                 ;;
 
 	    9)
@@ -212,12 +212,12 @@ function sub_menu() {
             1)
                 docker
                 echo "${Green}Docker和Docke-Compose安装${Default}"
-                read -p "${Green}按 Enter 键返回子菜单${Default}"
+                read -p "按 Enter 键返回子菜单"
                 ;;
             2)
                 npm
                 echo "${Green}NPM 安装${Default}"
-                read -p "${Green}按 Enter 键返回子菜单${Default}"
+                read -p "按 Enter 键返回子菜单"
                 ;;
             0)
                 return  # Return to the main menu
