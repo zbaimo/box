@@ -138,46 +138,46 @@ function start_menu() {
         case $choice in
             1)
                 update
-                echo -e "按 Enter 键返回主菜单"
+                echo -e "${Green}按 Enter 键返回主菜单${Default}"
                 read -p ""
                 ;;
             2)
                 swap
-                echo -e "按 Enter 键返回主菜单"
+                echo -e "${Green}按 Enter 键返回主菜单${Default}"
                 read -p ""
                 ;;
             3)
                 clean
-                echo -e "清理垃圾"
+                echo -e "${Green}清理垃圾${Default}"
                 read -p ""
                 ;;
             4)
                 gost
-                echo -e "Gost安装"
+                echo -e "${Green}Gost安装${Default}"
                 read -p ""
                 ;;
             5)
                 mt
-                echo -e "流媒体解锁检测"
+                echo -e "${Green}流媒体解锁检测${Default}"
                 read -p ""
                 ;;
             6)
                 speed
-                echo -e "Speed端口测速"
+                echo -e "${Green}Speed端口测速${Default}"
                 read -p ""
                 ;;
 	    7)
-                echo -e "执行 '更新系统固件'"
+                echo -e "${Green}执行 '更新系统固件'${Default}"
                 apt-get update
                 apt-get install -y wget vim
-                echo -e "操作完成"
-                read -p "按 Enter 键返回主菜单"
+                echo -e "${Green}操作完成${Default}"
+                read -p "${Green}按 Enter 键返回主菜单${Default}"
                 ;;
             8)
                 warp
-		echo -e "执行 'warp安装'"
-                echo -e "操作完成"
-                read -p "按 Enter 键返回主菜单"
+		echo -e "${Green}执行 'warp安装'${Default}"
+                echo -e "${Green}操作完成${Default}"
+                read -p "${Green}按 Enter 键返回主菜单${Default}"
                 ;;
 
 	    8)
@@ -211,13 +211,13 @@ function sub_menu() {
         case $sub_choice in
             1)
                 docker
-                echo "Docker和Docke-Compose安装"
-                read -p "按 Enter 键返回子菜单"
+                echo "${Green}Docker和Docke-Compose安装${Default}"
+                read -p "${Green}按 Enter 键返回子菜单${Default}"
                 ;;
             2)
                 npm
-                echo "NPM 安装"
-                read -p "按 Enter 键返回子菜单"
+                echo "${Green}NPM 安装${Default}"
+                read -p "${Green}按 Enter 键返回子菜单${Default}"
                 ;;
             0)
                 return  # Return to the main menu
