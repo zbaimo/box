@@ -103,6 +103,11 @@ function speed() {
     echo "你也可以输入 bash ./speed.sh 来手动运行"
     bash "./speed.sh"
 }
+# warp安装
+function warp() {
+    wget -O "./warp.sh" "wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
+" --no-check-certificate -T 30 -t 5 -d
+}
 
 # 主菜单函数
 function start_menu() {
@@ -118,6 +123,7 @@ function start_menu() {
         echo -e " ${Green}5. 流媒体解锁检测${Default}"
 	echo -e " ${Green}6. Speed端口测速${Default}"
         echo -e " ${Green}7. 更新系统固件${Default}"
+	echo -e " ${Green}8. warp安装${Default}"
 	echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}8. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
@@ -160,6 +166,12 @@ function start_menu() {
                 echo -e "执行 '更新系统固件'"
                 apt-get update
                 apt-get install -y wget vim
+                echo -e "操作完成"
+                read -p "按 Enter 键返回主菜单"
+                ;;
+            8)
+                warp
+		echo -e "执行 'warp安装'"
                 echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
