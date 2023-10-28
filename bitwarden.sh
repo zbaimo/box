@@ -88,3 +88,6 @@ echo -e "${GREEN}Bitwarden安装已完成${NC}"
 
 # 显示已开通的端口
 echo -e "${GREEN}已开通的端口:$port${NC}"
+
+#注意事项通知
+echo -e "${GREEN}若不允许他人注册在完成注册后回来修改docker-compose.yml文件来停止注册${NC}"
