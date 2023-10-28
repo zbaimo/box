@@ -113,6 +113,16 @@ function warp() {
     bash "./warp.sh"
 }
 
+# bitwarden安装
+function bitwarden() {
+    wget -O "./bitwarden.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/bitwarden.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./bitwarden.sh"
+    chmod 777 "./bitwarden.sh"
+    echo "下载完成"
+    echo "你也可以输入 bash .bitwarden.sh 来手动运行"
+    bash "./bitwarden.sh
+}
+
 # 主菜单函数
 function start_menu() {
     while true; do
@@ -203,6 +213,7 @@ function sub_menu() {
         echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1. Docker和Docke-Compose安装${Default}"
         echo -e " ${Green}2. NPM 安装${Default}"
+	echo -e " ${Green}3. Bitwarden 安装${Default}"
         echo -e " ${Green}0. 返回主菜单${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -217,6 +228,11 @@ function sub_menu() {
             2)
                 npm
                 echo "NPM 安装"
+                read -p "按 Enter 键返回子菜单"
+                ;;
+	    3)
+                bitwarden
+                echo "Bitwarden 安装"
                 read -p "按 Enter 键返回子菜单"
                 ;;
             0)
