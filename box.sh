@@ -178,7 +178,7 @@ function start_menu() {
     done
 }
 
-# 1号子菜单函数
+# Modified 1号子菜单函数
 function sub_menu() {
     while true; do
         clear
@@ -187,7 +187,7 @@ function sub_menu() {
         echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1. Docker和Docke-Compose安装${Default}"
         echo -e " ${Green}2. NPM 安装${Default}"
-        echo -e " ${Green}3. 返回主菜单${Default}"
+        echo -e " ${Green}0. 返回主菜单${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
 
@@ -203,8 +203,8 @@ function sub_menu() {
                 echo "NPM 安装"
                 read -p "按 Enter 键返回子菜单"
                 ;;
-            3)
-                return
+            0)
+                return  # Return to the main menu
                 ;;
             *)
                 echo -e "无效的选项"
