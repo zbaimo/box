@@ -105,8 +105,12 @@ function speed() {
 }
 # warp安装
 function warp() {
-    wget -O "./warp.sh" "wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
-" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./warp.sh"
+    chmod 777 "./warp.sh"
+    echo "下载完成"
+    echo "你也可以输入 bash ./warp.sh 来手动运行"
+    bash "./warp.sh"
 }
 
 # 主菜单函数
