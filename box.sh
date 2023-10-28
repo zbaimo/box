@@ -119,8 +119,8 @@ function bitwarden() {
     chmod +x "./bitwarden.sh"
     chmod 777 "./bitwarden.sh"
     echo "下载完成"
-    echo "你也可以输入 bash .bitwarden.sh 来手动运行"
-    bash "./bitwarden.sh
+    echo "你也可以输入 bash ./bitwarden.sh 来手动运行"
+    bash "./bitwarden.sh"
 }
 
 # 主菜单函数
