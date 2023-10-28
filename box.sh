@@ -138,45 +138,45 @@ function start_menu() {
         case $choice in
             1)
                 update
-                echo -e "${Green}按 Enter 键返回主菜单${Default}"
+                echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
             2)
                 swap
-                echo -e "${Green}按 Enter 键返回主菜单${Default}"
+                echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
             3)
                 clean
-                echo -e "${Green}清理垃圾${Default}"
+                echo -e "清理垃圾"
                 read -p ""
                 ;;
             4)
                 gost
-                echo -e "${Green}Gost安装${Default}"
+                echo -e "Gost安装"
                 read -p ""
                 ;;
             5)
                 mt
-                echo -e "${Green}流媒体解锁检测${Default}"
+                echo -e "流媒体解锁检测"
                 read -p ""
                 ;;
             6)
                 speed
-                echo -e "${Green}Speed端口测速${Default}"
+                echo -e "Speed端口测速"
                 read -p ""
                 ;;
 	    7)
-                echo -e "${Green}执行 '更新系统固件'${Default}"
+                echo -e "执行 '更新系统固件'"
                 apt-get update
                 apt-get install -y wget vim
-                echo -e "${Green}操作完成${Default}"
+                echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
             8)
                 warp
-		echo -e "${Green}执行 'warp安装'${Default}"
-                echo -e "${Green}操作完成${Default}"
+		echo -e "执行 'warp安装'"
+                echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
 
@@ -211,12 +211,12 @@ function sub_menu() {
         case $sub_choice in
             1)
                 docker
-                echo "${Green}Docker和Docke-Compose安装${Default}"
+                echo "Docker和Docke-Compose安装"
                 read -p "按 Enter 键返回子菜单"
                 ;;
             2)
                 npm
-                echo "${Green}NPM 安装${Default}"
+                echo "NPM 安装"
                 read -p "按 Enter 键返回子菜单"
                 ;;
             0)
