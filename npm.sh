@@ -22,6 +22,12 @@ show_progress() {
     echo -e "\n"
 }
 
+# 提示用户输入端口号
+echo -en "${GREEN}请输入Nginx代理管理器的Web界面端口号（默认为81）:${NC} "
+read custom_port
+
+# 使用用户输入的端口号，或者默认为81
+port="${custom_port:-81}"
 
 # 进入root目录
 cd /root
@@ -52,7 +58,7 @@ services:
     ports:
       - '80:80'
       - '443:443'
-      - '6600:81'
+      - '$port:81'  # 使用用户输入的端口号
     environment:
       DB_MYSQL_HOST: "db"
       DB_MYSQL_PORT: 3306
@@ -99,5 +105,8 @@ show_progress 0.1
 echo -e "${GREEN}NPM 安装已完成${NC}"
 
 # 显示已开通的端口
-echo -e "${GREEN}已开通的端口：80, 443, 6600${NC}"
+echo -e "${GREEN}已开通的端口：80, 443, $port${NC}"
 
+# 输出默认管理员帐户和密码
+echo -e "${GREEN}默认管理员帐户：admin@example.com${NC}"
+echo -e "${GREEN}默认管理员密码：changeme${NC}"
