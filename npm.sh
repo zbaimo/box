@@ -29,6 +29,21 @@ read custom_port
 # 使用用户输入的端口号，或者默认为81
 port="${custom_port:-81}"
 
+# 提示用户输入数据库相关参数
+echo -en "${GREEN}请输入数据库用户名（默认为npm）:${NC} "
+read custom_db_user
+
+echo -en "${GREEN}请输入数据库密码（默认为npm）:${NC} "
+read custom_db_passwd
+
+# 使用用户输入的值，或者使用默认值
+DB_MYSQL_USER="${custom_db_user:-npm}"
+DB_MYSQL_PASSWORD="${custom_db_passwd:-npm}"
+MYSQL_ROOT_PASSWORD="$DB_MYSQL_PASSWORD"
+MYSQL_PASSWORD="$DB_MYSQL_PASSWORD"
+MYSQL_DATABASE="$DB_MYSQL_USER"
+MYSQL_USER="$DB_MYSQL_USER"
+
 # 进入root目录
 cd /root
 
@@ -62,9 +77,9 @@ services:
     environment:
       DB_MYSQL_HOST: "db"
       DB_MYSQL_PORT: 3306
-      DB_MYSQL_USER: "npm"
-      DB_MYSQL_PASSWORD: "npm"
-      DB_MYSQL_NAME: "npm"
+      DB_MYSQL_USER: "$DB_MYSQL_USER"
+      DB_MYSQL_PASSWORD: "$DB_MYSQL_PASSWORD"
+      DB_MYSQL_NAME: "$DB_MYSQL_USER"
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
@@ -75,10 +90,10 @@ services:
     image: 'jc21/mariadb-aria:latest'
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
-      MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
+      MYSQL_ROOT_PASSWORD: "$DB_MYSQL_PASSWORD"
+      MYSQL_DATABASE: "$MYSQL_DATABASE"
+      MYSQL_USER: "$DB_MYSQL_USER"
+      MYSQL_PASSWORD: "$DB_MYSQL_PASSWORD"
     volumes:
       - ./mysql:/var/lib/mysql
 EOL
