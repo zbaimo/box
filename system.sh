@@ -33,7 +33,7 @@ while true; do
                         read -p "请输入端口: " PORT
 
                         # 执行 Debian 12 的安装命令
-                        bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/zerowx6688/box/main/install.sh') -d 12 -v 64 -p "$PASSWORD" -port $PORT                       
+                        bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 12 -v 64 -p "$PASSWORD" -port $PORT                       
                         break 2  # 退出两层循环
                         ;;
                     2)
@@ -42,7 +42,7 @@ while true; do
                         read -p "请输入端口: " PORT
 
                         # 执行 Debian 11 的安装命令
-                        bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/zerowx6688/box/main/install.sh') -d 11 -v 64 -p "$PASSWORD" -port $PORT
+                        bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p "$PASSWORD" -port $PORT
                         break 2  # 退出两层循环
                         ;;
                     3)
@@ -51,7 +51,7 @@ while true; do
                         read -p "请输入端口: " PORT
 
                         # 执行 Debian 10 的安装命令
-                        bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/zerowx6688/box/main/install.sh') -d 10 -v 64 -p "$PASSWORD" -port $PORT
+                        bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 10 -v 64 -p "$PASSWORD" -port $PORT
                         break 2  # 退出两层循环
                         ;;
                     *)
