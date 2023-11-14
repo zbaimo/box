@@ -80,20 +80,20 @@ while true; do
 
                 case $ubuntu_choice in
                     
-                    22.04 | 20.04 | 18.04)
+                    1 | 2 | 3)
                         # 提示用户输入密码和端口
                         read -p "请输入密码: " PASSWORD
                         read -p "请输入端口: " PORT
 
                         # 设置 Ubuntu 版本选择
                         case "$ubuntu_choice" in
-                            22.04)
+                            1)
                                 system="-u 22.04"
                                 ;;
-                            20.04)
+                            2)
                                 system="-u 20.04"
                                 ;;
-                            18.04)
+                            3)
                                 system="-u 18.04"
                                 ;;
                         esac
