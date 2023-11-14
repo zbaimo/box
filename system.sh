@@ -22,9 +22,7 @@ while true; do
                 read -p "请输入选项 (0, 1, 2 或 3): " debian_choice
 
                 case $debian_choice in
-                    0)
-                        break
-                        ;;
+                    
                     1 | 2 | 3)
                         # 提示用户输入密码和端口
                         read -p "请输入密码: " PASSWORD
@@ -59,6 +57,11 @@ while true; do
                         bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') $system -v 64 -p "$PASSWORD" -port $PORT
                         break 2  # 退出两层循环
                         ;;
+                    
+                    0)
+                        break
+                        ;;
+
                     *)
                         echo "无效的选项，请重新输入."
                         ;;
@@ -76,9 +79,7 @@ while true; do
                 read -p "请输入选项 (0, 22.04, 20.04 或 18.04): " ubuntu_choice
 
                 case $ubuntu_choice in
-                    0)
-                        break
-                        ;;
+                    
                     22.04 | 20.04 | 18.04)
                         # 提示用户输入密码和端口
                         read -p "请输入密码: " PASSWORD
@@ -113,6 +114,11 @@ while true; do
                         bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') $xitong -v 64 -p "$PASSWORD" -port $PORT
                         break 2  # 退出两层循环
                         ;;
+                    
+                    0)
+                        break
+                        ;;
+                    
                     *)
                         echo "无效的选项，请重新输入."
                         ;;
