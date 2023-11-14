@@ -119,8 +119,17 @@ function bitwarden() {
     chmod +x "./bitwarden.sh"
     chmod 777 "./bitwarden.sh"
     echo "下载完成"
-    echo "你也可以输入bitwarden ./swap.sh 来手动运行"
+    echo "你也可以输入bash ./bitwarden.sh 来手动运行"
     bash "./bitwarden.sh"
+}
+# system安装
+function system() {
+    wget -O "./system.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/system.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./system.sh"
+    chmod 777 "./system.sh"
+    echo "下载完成"
+    echo "你也可以输入bash ./system.sh 来手动运行"
+    bash "./system.sh"
 }
 
 # 主菜单函数
@@ -138,8 +147,9 @@ function start_menu() {
 	echo -e " ${Green}6. Speed端口测速${Default}"
         echo -e " ${Green}7. 更新系统固件${Default}"
 	echo -e " ${Green}8. warp安装${Default}"
+        echo -e " ${Green}9. 重装系统${Default}"
 	echo -e "${Green}==================================================${Default}"
-        echo -e " ${Green}9. Docker项目${Default}"
+        echo -e " ${Green}10. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -189,8 +199,14 @@ function start_menu() {
                 echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
-
 	    9)
+                system
+		echo -e "执行 'system安装'"
+                echo -e "操作完成"
+                read -p "按 Enter 键返回主菜单"
+                ;;
+
+	    10)
                 sub_menu  # Docker项目
                 ;;
             0)
