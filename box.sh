@@ -49,32 +49,50 @@ function gost() {
     bash "./gost.sh"
 }
 #MT.SH 流媒体解锁测试
-function mt(){
-        #安装JQ
-	if [ -e "/etc/redhat-release" ];then
-	yum install epel-release -y -q > /dev/null;
-	yum install jq -y -q > /dev/null;
-	elif [[ $(cat /etc/os-release | grep '^ID=') =~ ubuntu ]] || [[ $(cat /etc/os-release | grep '^ID=') =~ debian ]];then
-	apt-get update -y > /dev/null;
-	apt-get install jq > /dev/null;
-	else 
-	echo -e "${Font_Red}请手动安装jq${Font_Suffix}";
-	exit;
-	fi
-
-        jq -V > /dev/null 2>&1;
-        if [ $? -ne 0 ];then
-	echo -e "${Font_Red}请手动安装jq${Font_Suffix}";
-	exit;
+function mt() {
+    # 如果未安装jq，则安装
+    if ! command -v jq &>/dev/null; then
+        if [ -e "/etc/redhat-release" ]; then
+            sudo yum install epel-release -y -q > /dev/null || {
+                echo -e "${Red}错误：安装epel-release失败。${Default}"
+                exit 1
+            }
+            sudo yum install jq -y -q > /dev/null || {
+                echo -e "${Red}错误：安装jq失败。${Default}"
+                exit 1
+            }
+        elif [[ $(cat /etc/os-release | grep '^ID=') =~ ubuntu ]] || [[ $(cat /etc/os-release | grep '^ID=') =~ debian ]]; then
+            sudo apt-get update -y > /dev/null || {
+                echo -e "${Red}错误：更新软件包列表失败。${Default}"
+                exit 1
+            }
+            sudo apt-get install jq -y > /dev/null || {
+                echo -e "${Red}错误：安装jq失败。${Default}"
+                exit 1
+            }
+        else
+            echo -e "${Red}错误：不支持的系统。${Default}"
+            exit 1
         fi
+    fi
 
-wget -O "./mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d
-chmod +x "./mt.sh"
-chmod 777 "./mt.sh"
-blue "下载完成"
-blue "你也可以输入 bash ./mt.sh 来手动运行"
-bash ./mt.sh
+    jq -V > /dev/null 2>&1 || {
+        echo -e "${Red}错误：未安装jq。${Default}"
+        exit 1
+    }
+
+    # 下载并执行mt.sh
+    wget -O "./mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d || {
+        echo -e "${Red}错误：下载mt.sh失败。${Default}"
+        exit 1
+    }
+
+    chmod +x "./mt.sh"
+    echo -e "${Green}下载完成。${Default}"
+    echo -e "${Green}你也可以手动运行 'bash ./mt.sh'。${Default}"
+    bash "./mt.sh"
 }
+
 # docker和docker-compose安装
 function docker() {
     wget -O "./docker.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/docker.sh" --no-check-certificate -T 30 -t 5 -d
