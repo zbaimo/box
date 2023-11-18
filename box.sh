@@ -273,6 +273,9 @@ function iTool_menu() {
     done
 }
 
+# 调用主菜单函数
+start_menu
+
 # Modified 1号子菜单函数
 function sub_menu() {
     while true; do
