@@ -157,6 +157,7 @@ function start_menu() {
         echo -e " ${Green}10. Docker项目${Default}"
 	echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}11.安装XUI面板${Default}"
+	echo -e " ${Green}12.工具箱${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -218,7 +219,10 @@ function start_menu() {
 	    11)
                 xui  # xui面板
                 ;;
-            0)
+            12)
+                xui  # xui面板
+                ;;
+	    0)
                 echo "退出脚本"
                 exit 0
                 ;;
