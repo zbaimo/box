@@ -132,6 +132,11 @@ function system() {
     bash "./system.sh"
 }
 
+#x-ui面板安装
+function xui() {
+     bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
+}
+
 # 主菜单函数
 function start_menu() {
     while true; do
@@ -150,6 +155,8 @@ function start_menu() {
         echo -e " ${Green}9. 重装系统${Default}"
 	echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}10. Docker项目${Default}"
+	echo -e "${Green}==================================================${Default}"
+        echo -e " ${Green}11.安装XUI面板${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -205,9 +212,11 @@ function start_menu() {
                 echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
-
-	    10)
+            10)
                 sub_menu  # Docker项目
+                ;;
+	    11)
+                xui  # xui面板
                 ;;
             0)
                 echo "退出脚本"
