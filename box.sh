@@ -145,19 +145,11 @@ function start_menu() {
         echo -e "${Green}                Wenx一键脚本工具                   ${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1. 更新脚本${Default}"
-        echo -e " ${Green}2. 执行SWAP一键安装/卸载脚本${Default}"
+        echo -e " ${Green}2.工具箱${Default}"
         echo -e " ${Green}3. 清理垃圾${Default}"
-        echo -e " ${Green}4. Gost安装${Default}"
-        echo -e " ${Green}5. 流媒体解锁检测${Default}"
-	echo -e " ${Green}6. Speed端口测速${Default}"
-        echo -e " ${Green}7. 更新系统固件${Default}"
-	echo -e " ${Green}8. warp安装${Default}"
-        echo -e " ${Green}9. 重装系统${Default}"
+        echo -e " ${Green}4. 更新系统固件${Default}"
 	echo -e "${Green}==================================================${Default}"
-        echo -e " ${Green}10. Docker项目${Default}"
-	echo -e "${Green}==================================================${Default}"
-        echo -e " ${Green}11.安装XUI面板${Default}"
-	echo -e " ${Green}12.工具箱${Default}"
+        echo -e " ${Green}5. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -170,7 +162,7 @@ function start_menu() {
                 read -p ""
                 ;;
             2)
-                swap
+                iTool_menu
                 echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
@@ -179,52 +171,82 @@ function start_menu() {
                 echo -e "清理垃圾"
                 read -p ""
                 ;;
-            4)
-                gost
-                echo -e "Gost安装"
-                read -p ""
-                ;;
-            5)
-                mt
-                echo -e "流媒体解锁检测"
-                read -p ""
-                ;;
-            6)
-                speed
-                echo -e "Speed端口测速"
-                read -p ""
-                ;;
-	    7)
+	    4)
                 echo -e "执行 '更新系统固件'"
                 apt-get update
                 apt-get install -y wget vim
                 echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
-            8)
-                warp
-		echo -e "执行 'warp安装'"
-                echo -e "操作完成"
-                read -p "按 Enter 键返回主菜单"
-                ;;
-	    9)
-                system
-		echo -e "执行 'system安装'"
-                echo -e "操作完成"
-                read -p "按 Enter 键返回主菜单"
-                ;;
-            10)
+            5)
                 sub_menu  # Docker项目
-                ;;
-	    11)
-                xui  # xui面板
-                ;;
-            12)
-                xui  # xui面板
                 ;;
 	    0)
                 echo "退出脚本"
                 exit 0
+                ;;
+            *)
+                echo -e "无效的选项"
+                ;;
+        esac
+    done
+}
+function iTool_menu() {
+    while true; do
+        clear
+        echo -e "${Green}==================================================${Default}"
+        echo -e "${Green}                工具箱                               ${Default}"
+        echo -e "${Green}==================================================${Default}"
+        echo -e " ${Green}1. 执行SWAP一键安装/卸载脚本${Default}"
+        echo -e " ${Green}2. Gost安装${Default}"
+        echo -e " ${Green}3. 流媒体解锁检测${Default}"
+        echo -e " ${Green}4. Speed端口测速${Default}"
+        echo -e " ${Green}5. warp安装${Default}"
+        echo -e " ${Green}6. 重装系统${Default}"
+	echo -e " ${Green}7.安装XUI面板${Default}"
+        echo -e " ${Green}0. 返回主菜单${Default}"
+        echo -e "${Green}==================================================${Default}"
+        echo -n "请输入数字:"
+
+        read toolbox_choice
+        case $toolbox_choice in
+            1)
+                swap
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+            2)
+                gost
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+            3)
+                mt
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+            4)
+                speed
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+            5)
+                warp
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+            6)
+                system
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+            7)
+                xui
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+	    0)
+                return  # Return to the main menu
                 ;;
             *)
                 echo -e "无效的选项"
@@ -238,7 +260,7 @@ function sub_menu() {
     while true; do
         clear
         echo -e "${Green}==================================================${Default}"
-        echo -e "${Green}                Wenx一键脚本工具                   ${Default}"
+        echo -e "${Green}                Docker安装工具                   ${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1. Docker和Docke-Compose安装${Default}"
         echo -e " ${Green}2. NPM 安装${Default}"
