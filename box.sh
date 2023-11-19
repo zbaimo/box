@@ -197,7 +197,7 @@ function start_menu() {
                 read -p "按 Enter 键返回主菜单"
                 ;;
             5)
-                sub_menu  # Docker项目
+                docker_menu  # Docker项目
 		echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
@@ -279,7 +279,7 @@ function iTool_menu() {
 start_menu
 
 # Modified 1号子菜单函数
-function sub_menu() {
+function docker_menu() {
     while true; do
         clear
         echo -e "${Green}==================================================${Default}"
