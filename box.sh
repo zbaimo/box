@@ -198,6 +198,8 @@ function start_menu() {
                 ;;
             5)
                 sub_menu  # Docker项目
+		echo -e "按 Enter 键返回主菜单"
+                read -p ""
                 ;;
 	    0)
                 echo "退出脚本"
