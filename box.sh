@@ -165,6 +165,25 @@ function creat_user() {
     bash "./creat_user.sh"
 }
 
+#修改服务器名
+function sever_name() {
+     wget -O "./sever_name.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/sever_name.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./sever_name.sh"
+    chmod 777 "./sever_name.sh"
+    echo "下载完成"
+    echo "你也可以输入bash ./sever_name.sh 来手动运行"
+    bash "./sever_name.sh"
+}
+
+#修改端口号
+function sshport() {
+     wget -O "./sshport.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/sshport.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./sshport.sh"
+    chmod 777 "./sshport.sh"
+    echo "下载完成"
+    echo "你也可以输入bash ./sshport.sh 来手动运行"
+    bash "./sshport.sh"
+}
 
 # 主菜单函数
 function start_menu() {
