@@ -255,7 +255,7 @@ function iTool_menu() {
         echo -e " ${Green}5.  warp安装${Default}"
         echo -e " ${Green}6.  重装系统${Default}"
 	echo -e " ${Green}7.  安装XUI面板${Default}"
-        echo -e " ${Green}8.  创建用户\(注意：创建新用户后root用户就无法登录了）${Default}"
+        echo -e " ${Green}8.  创建用户(注意：创建新用户后root用户就无法登录了）${Default}"
 	echo -e " ${Green}9.  修改服务器名${Default}"
         echo -e " ${Green}10. 修改端口号${Default}"
         echo -e " ${Green}0.  返回主菜单${Default}"
