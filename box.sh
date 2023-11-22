@@ -155,6 +155,17 @@ function xui() {
      bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
 }
 
+#创建用户
+function creat_user() {
+     wget -O "./creat_user.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/creat_user.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./creat_user.sh"
+    chmod 777 "./creat_user.sh"
+    echo "下载完成"
+    echo "你也可以输入bash ./creat_user.sh 来手动运行"
+    bash "./creat_user.sh"
+}
+
+
 # 主菜单函数
 function start_menu() {
     while true; do
