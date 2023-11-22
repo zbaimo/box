@@ -245,7 +245,8 @@ function iTool_menu() {
     while true; do
         clear
         echo -e "${Green}==================================================${Default}"
-        echo -e "${Green}                工具箱                               ${Default}"
+        echo -e "${Green}                工具箱              
+	echo -e "${Green}          工具大多数基于Debian/Ubuntu              ${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1.  执行SWAP一键安装/卸载脚本${Default}"
         echo -e " ${Green}2.  Gost安装${Default}"
