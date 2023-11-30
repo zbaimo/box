@@ -7,7 +7,7 @@ Default="\e[0m"
 
 # 定义SWAP安装/卸载函数
 function swap() {
-    wget -O "./swap.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/swap.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./swap.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/swap.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./swap.sh"
     chmod 777 "./swap.sh"
     echo "下载完成"
@@ -18,7 +18,7 @@ function swap() {
 # 定义更新脚本函数
 function update() {
     echo -e "${Green}正在更新脚本...${Default}"
-    wget -O "./box.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/box.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./box.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/box.sh" --no-check-certificate -T 30 -t 5 -d
     echo -e "${Green}更新完成${Default}"
 
     # 检查更新是否成功
@@ -82,7 +82,7 @@ function mt() {
     }
 
     # 下载并执行mt.sh
-    wget -O "./mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/mt.sh" --no-check-certificate -T 30 -t 5 -d || {
+    wget -O "./mt.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/mt.sh" --no-check-certificate -T 30 -t 5 -d || {
         echo -e "${Red}错误：下载mt.sh失败。${Default}"
         exit 1
     }
@@ -95,7 +95,7 @@ function mt() {
 
 # docker和docker-compose安装
 function docker() {
-    wget -O "./docker.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/docker.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./docker.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/docker.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./docker.sh"
     chmod 777 "./docker.sh"
     echo "下载完成"
@@ -104,7 +104,7 @@ function docker() {
 }
 # 定义NPM安装/卸载函数
 function npm() {
-    wget -O "./npm.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/npm.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./npm.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/npm.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./npm.sh"
     chmod 777 "./npm.sh"
     echo "下载完成"
@@ -114,7 +114,7 @@ function npm() {
 
 # 定义speed安装/卸载函数
 function speed() {
-    wget -O "./speed.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/speed.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./speed.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/speed.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./speed.sh"
     chmod 777 "./speed.sh"
     echo "下载完成"
@@ -123,7 +123,7 @@ function speed() {
 }
 # warp安装
 function warp() {
-    wget -O "./warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/data/menu.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./warp.sh"
     chmod 777 "./warp.sh"
     echo "下载完成"
@@ -133,7 +133,7 @@ function warp() {
 
 # bitwarden安装
 function bitwarden() {
-    wget -O "./bitwarden.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/bitwarden.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./bitwarden.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/bitwarden.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./bitwarden.sh"
     chmod 777 "./bitwarden.sh"
     echo "下载完成"
@@ -142,7 +142,7 @@ function bitwarden() {
 }
 # system安装
 function system() {
-    wget -O "./system.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/system.sh" --no-check-certificate -T 30 -t 5 -d
+    wget -O "./system.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/system.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./system.sh"
     chmod 777 "./system.sh"
     echo "下载完成"
@@ -157,7 +157,7 @@ function xui() {
 
 #创建用户
 function creat_user() {
-     wget -O "./creat_user.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/creat_user.sh" --no-check-certificate -T 30 -t 5 -d
+     wget -O "./creat_user.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/creat_user.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./creat_user.sh"
     chmod 777 "./creat_user.sh"
     echo "下载完成"
@@ -167,7 +167,7 @@ function creat_user() {
 
 #修改服务器名
 function sever_name() {
-     wget -O "./sever_name.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/sever_name.sh" --no-check-certificate -T 30 -t 5 -d
+     wget -O "./sever_name.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/sever_name.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./sever_name.sh"
     chmod 777 "./sever_name.sh"
     echo "下载完成"
@@ -177,7 +177,7 @@ function sever_name() {
 
 #修改端口号
 function sshport() {
-     wget -O "./sshport.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/sshport.sh" --no-check-certificate -T 30 -t 5 -d
+     wget -O "./sshport.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/sshport.sh" --no-check-certificate -T 30 -t 5 -d
     chmod +x "./sshport.sh"
     chmod 777 "./sshport.sh"
     echo "下载完成"
