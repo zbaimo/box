@@ -1,12 +1,4 @@
 #!/bin/bash
-alias box-ui='./box.sh'
-
-
-function start_menu() {
-    
-}
-
-start_menu
 
 # 定义颜色样式
 Green="\e[32m"
