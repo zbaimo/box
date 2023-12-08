@@ -185,6 +185,16 @@ function sshport() {
     bash "./sshport.sh"
 }
 
+#系统信息
+function ip() {
+     wget -O "./ip.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/ip.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./ip.sh"
+    chmod 777 "./ip.sh"
+    echo "下载完成"
+    echo "你也可以输入bash ./ip.sh 来手动运行"
+    bash "./ip.sh"
+}
+
 # 主菜单函数
 function start_menu() {
     while true; do
@@ -193,9 +203,10 @@ function start_menu() {
         echo -e "${Green}                Wenx一键脚本工具                   ${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}1. 更新脚本${Default}"
-        echo -e " ${Green}2. 工具箱${Default}"
-        echo -e " ${Green}3. 清理垃圾${Default}"
-        echo -e " ${Green}4. 更新系统固件${Default}"
+	echo -e " ${Green}2. 系统信息${Default}"
+        echo -e " ${Green}3. 工具箱${Default}"
+        echo -e " ${Green}4. 清理垃圾${Default}"
+        echo -e " ${Green}5. 更新系统固件${Default}"
 	echo -e "${Green}==================================================${Default}"
         echo -e " ${Green}5. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
@@ -209,24 +220,29 @@ function start_menu() {
                 echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
-            2)
+            3)
+                ip
+                echo -e "按 Enter 键返回主菜单"
+                read -p ""
+                ;;
+	    3)
                 iTool_menu
                 echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
-            3)
+            4)
                 clean
                 echo -e "清理垃圾"
                 read -p ""
                 ;;
-	    4)
+	    5)
                 echo -e "执行 '更新系统固件'"
                 apt-get update
                 apt-get install -y wget vim
                 echo -e "操作完成"
                 read -p "按 Enter 键返回主菜单"
                 ;;
-            5)
+            6)
                 docker_menu  # Docker项目
 		echo -e "按 Enter 键返回主菜单"
                 read -p ""
