@@ -220,7 +220,7 @@ function start_menu() {
                 echo -e "按 Enter 键返回主菜单"
                 read -p ""
                 ;;
-            3)
+            2)
                 ip
                 echo -e "按 Enter 键返回主菜单"
                 read -p ""
