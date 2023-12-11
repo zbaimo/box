@@ -208,7 +208,7 @@ function start_menu() {
         echo -e " ${Green}4. 清理垃圾${Default}"
         echo -e " ${Green}5. 更新系统固件${Default}"
 	echo -e "${Green}==================================================${Default}"
-        echo -e " ${Green}5. Docker项目${Default}"
+        echo -e " ${Green}6. Docker项目${Default}"
 	echo -e " ${Green}0. 退出脚本${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
