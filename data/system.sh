@@ -15,9 +15,10 @@ while true; do
             while true; do
                 # 打印二级菜单
                 echo "请选择 Debian 版本:"
-                echo "1. Debian 12"
-                echo "2. Debian 11"
-                echo "3. Debian 10"
+                echo "1. Debian 12.5"
+                echo "2. Debian 12"
+                echo "3. Debian 11"
+                echo "4. Debian 10"
                 echo "0. 返回上级菜单"
                 read -p "请输入选项 (0, 1, 2 或 3): " debian_choice
 
@@ -31,12 +32,15 @@ while true; do
                         # 设置 Debian 版本选择
                         case "$debian_choice" in
                             1)
-                                system="-d 12"
+                                system="-d 12.5"
                                 ;;
                             2)
-                                system="-d 11"
+                                system="-d 12"
                                 ;;
                             3)
+                                system="-d 11"
+                                ;;
+                            4)
                                 system="-d 10"
                                 ;;
                         esac
