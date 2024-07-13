@@ -195,6 +195,27 @@ function ip() {
     bash "./ip.sh"
 }
 
+#服务器活跃
+function cpu() {
+    if [[ $(command -v apt-get) ]]; then
+        sudo apt-get update
+        sudo apt-get install -y stress
+    elif [[ $(command -v yum) ]]; then
+        sudo yum install -y epel-release
+        sudo yum install -y stress
+    else
+        echo "Unsupported package manager. Please install stress manually."
+        exit 1
+    fi
+    
+    wget -O "./cpu.sh" "https://raw.githubusercontent.com/zerowx6688/box/main/data/cpu.sh" --no-check-certificate -T 30 -t 5 -d
+    chmod +x "./cpu.sh"
+    chmod 777 "./cpu.sh"
+    echo "下载完成"
+    echo "你也可以输入bash ./cpu.sh 来手动运行"
+    bash "./cpu.sh"
+}
+
 # 主菜单函数
 function start_menu() {
     while true; do
@@ -274,6 +295,7 @@ function iTool_menu() {
         echo -e " ${Green}8.  创建用户(注意：创建新用户后root用户就无法登录了）${Default}"
 	echo -e " ${Green}9.  修改服务器名${Default}"
         echo -e " ${Green}10. 修改端口号${Default}"
+	echo -e " ${Green}11. 服务器活跃${Default}"
         echo -e " ${Green}0.  返回主菜单${Default}"
         echo -e "${Green}==================================================${Default}"
         echo -n "请输入数字:"
@@ -327,6 +349,11 @@ function iTool_menu() {
                 ;;
 	    10)
                 sshport
+                echo -e "按 Enter 键返回工具箱菜单"
+                read -p ""
+                ;;
+	    11)
+                cpu
                 echo -e "按 Enter 键返回工具箱菜单"
                 read -p ""
                 ;;
